@@ -3,6 +3,12 @@ const express = require("express");
 const exphbs = require("express-handlebars");
 const app = express();
 const port = 3000;
+const mongoose = require("mongoose");
+
+mongoose.connect("mongodb://localhost/nodeblog_db", {
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+});
 
 app.use(express.static("public"));
 
